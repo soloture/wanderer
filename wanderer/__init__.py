@@ -1,11 +1,11 @@
 from flask import Flask
 from flask import request, url_for, render_template
-from flask.ext.sqlalchemy import SQLAlchemy
+from flaskext.mongoalchemy import MongoAlchemy
 
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
-db = SQLAlchemy(app)
+db = MongoAlchemy(app)
 
 from views import *
 
